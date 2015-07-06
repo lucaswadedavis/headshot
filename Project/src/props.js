@@ -1,9 +1,5 @@
 (function(){
 
-  var state = {
-
-  };
-
   var stochastic = function(min, max){
     return min + ( (max-min) * Math.random() );
   }
@@ -104,10 +100,7 @@
       }
       else{return false;}
     },
-
-
-
-    };
+  };
 
   var bilateralPaint = function(ctx,width,height){
     var color=davis.randomColor();
@@ -556,7 +549,6 @@
 
   props.Robot = function(opts){
     var group = new THREE.Object3D();
-    group.animations = {};
     props.RobotLegs(group,{x:0+opts.x,y:-500,z:0});
     return group;
   };

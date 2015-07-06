@@ -16,7 +16,7 @@
     document.body.appendChild(targetElement);
   };
  
-///////////////////////////////////////////////////////////////////////////////
+  // below this is the Theatre class
 
   var Theatre = function(targetID){
     if (targetID === undefined){
@@ -26,35 +26,36 @@
 
     this.targetElementID = targetID;
 
+    // private properties
     var camera, scene, renderer, controls;
 
-    cast = [];
-
     this.addMesh = function(mesh){
-      cast.push(mesh);
       scene.add(mesh);
     };
 
     this.init = function() {
 
+      scene = new THREE.Scene();
+      scene.add(new THREE.HemisphereLight(0xffffff, 0x333333, 1) );
+
       camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 1, 10000);
       camera.position.z = 1000;
       camera.lookAt(0,0,0);
-      scene = new THREE.Scene();
-      controls = new THREE.OrbitControls(camera);
-      controls.damping = 0.2;
+
       renderer = new THREE.WebGLRenderer();
       renderer.setSize(window.innerWidth, window.innerHeight);
       var targetElement = document.getElementById(targetID);
       targetElement.appendChild(renderer.domElement);
-      scene.add(new THREE.HemisphereLight(0xffffff, 0x333333, 1) );
+
+      controls = new THREE.OrbitControls(camera);
+      controls.damping = 0.2;
       controls.addEventListener('change',renderer.render)
-    }
+    };
 
     var animate = function() {
       requestAnimationFrame(animate);
       renderer.render(scene, camera);
-    }
+    };
 
     this.animate = animate;
 

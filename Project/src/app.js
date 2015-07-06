@@ -1,12 +1,3 @@
-//we'll want a theatre class
-//the theatre object will take a constructor target to inject into the dom
-//it will have it's own camera, lightsource, scene, renderer, and controlls...
-//
-//we'll also want a few props classes
-//if we do the robots (which I think we maybe should) that and a floor prop and a controls prop would be about enough.
-//
-
-
 (function(){
 
   var app = {};

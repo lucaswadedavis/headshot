@@ -1,5 +1,7 @@
 # Bot Hangar
 
+[![The Bot Hangar](http://2.bp.blogspot.com/-T6t12NgG0Rk/VZof94h2i3I/AAAAAAAAAFA/BzLIQTGHJCk/s1600/bot-hangar.png)](http://lucaswadedavis.github.io/altspacevr-project-threejs/Project/)
+
 The Bot Hangar is a proof-of-concept demonstration of procedurally generated, parametrically designed robot avatars. Reloading the page will create 7 more.
 
 ## The Code
